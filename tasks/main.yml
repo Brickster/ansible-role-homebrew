@@ -12,7 +12,7 @@
   homebrew_tap: tap=caskroom/cask state=present
 
 - name: tap caskroom/versions
-  homebrew_tap: tag=caskroom/versions state=present
+  homebrew_tap: tap=caskroom/versions state=present
 
 - name: tap homebrew/services
   homebrew_tap: tap=homebrew/services state=present
