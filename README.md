@@ -9,6 +9,8 @@ Ansible role to install Homebrew on OSX. This role is part of the Superlumic pro
 ## Role variables
 
 ```yaml
+homebrew_formulae: []
+homebrew_cask_formulae: []
 ```
 
 # Usage

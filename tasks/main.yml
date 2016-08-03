@@ -8,8 +8,19 @@
 - name: update and upgrade homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
 
-- name: install homebrew cask
+- name: tap caskroom/cask
   homebrew_tap: tap=caskroom/cask state=present
 
-- name: install homebrew services
+- name: tap caskroom/versions
+  homebrew_tap: tag=caskroom/versions state=present
+
+- name: tap homebrew/services
   homebrew_tap: tap=homebrew/services state=present
+
+- name: install brew formulae
+  homebrew: name={{item}} state=latest
+  with_items: "{{ homebrew_formulae }}"
+  
+- name: install cask formulae
+  homebrew_cask: name={{item}} state=present
+  with_items: "{{ homebrew_cask_formulae }}"
