@@ -16,11 +16,3 @@
 
 - name: tap homebrew/services
   homebrew_tap: tap=homebrew/services state=present
-
-- name: install brew formulae
-  homebrew: name={{item}} state=latest
-  with_items: "{{ homebrew_formulae }}"
-  
-- name: install cask formulae
-  homebrew_cask: name={{item}} state=present
-  with_items: "{{ homebrew_cask_formulae }}"
