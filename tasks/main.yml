@@ -8,17 +8,11 @@
 - name: update and upgrade homebrew
   homebrew: update_homebrew=yes upgrade_all=yes
 
-- name: tap caskroom/cask
-  homebrew_tap: tap=caskroom/cask state=present
-
-- name: tap versions
+- name: tap caskroom
   homebrew_tap: tap={{item}} state=present
   with_items:
-    - homebrew/versions
+    - caskroom/cask
     - caskroom/versions
 
 - name: tap homebrew/services
   homebrew_tap: tap=homebrew/services state=present
-  
-- name: tap homebrew/dupes
-  homebrew_tap: tap=homebrew/dupes state=present
