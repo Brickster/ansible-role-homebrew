@@ -13,6 +13,12 @@
   with_items:
     - caskroom/cask
     - caskroom/versions
+  # ansible has a bug where taps succeed but look like a failure 
+  # https://github.com/ansible/ansible/issues/40853
+  ignore_errors: yes
 
 - name: tap homebrew/services
   homebrew_tap: tap=homebrew/services state=present
+  # ansible has a bug where taps succeed but look like a failure 
+  # https://github.com/ansible/ansible/issues/40853
+  ignore_errors: yes
